@@ -1,0 +1,54 @@
+@import './../functions/index.scss';
+
+@mixin setSpace($setSpace: padding, $setSpaceValues: 0 0 0 0) {
+  @if type-of($setSpace) == list {
+    $setSpaceValues: $setSpace;
+    $setSpace: padding;
+  }
+
+  $listLength: length($setSpaceValues);
+
+  @if ($listLength == 4) {
+    $top: nth($setSpaceValues, 1);
+    $right: nth($setSpaceValues, 2);
+    $bottom: nth($setSpaceValues, 3);
+    $left: nth($setSpaceValues, 4);
+
+    #{$setSpace}: if($top == auto, auto, setPixel($top))
+      if($right == auto, auto, setPixel($right))
+      if($bottom == auto, auto, setPixel($bottom))
+      if($left == auto, auto, setPixel($left));
+
+    #{$setSpace}: if($top == auto, auto, setRem($top))
+      if($right == auto, auto, setRem($right))
+      if($bottom == auto, auto, setRem($bottom))
+      if($left == auto, auto, setRem($left));
+  }
+
+  @if ($listLength == 2) {
+    $topBottom: nth($setSpaceValues, 1);
+    $leftRight: nth($setSpaceValues, 2);
+
+    #{$setSpace}: if($topBottom == auto, auto, setPixel($topBottom))
+      if($leftRight == auto, auto, setPixel($leftRight));
+
+    #{$setSpace}: if($topBottom == auto, auto, setRem($topBottom))
+      if($leftRight == auto, auto, setRem($leftRight));
+  }
+
+  @if ($listLength == 1) {
+    $topRightBottomLeft: nth($setSpaceValues, 1);
+
+    #{$setSpace}: if(
+      $topRightBottomLeft == auto,
+      auto,
+      setPixel($topRightBottomLeft)
+    );
+
+    #{$setSpace}: if(
+      $topRightBottomLeft == auto,
+      auto,
+      setRem($topRightBottomLeft)
+    );
+  }
+}

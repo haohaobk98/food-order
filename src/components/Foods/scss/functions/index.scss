@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function setPixel($value) {
+  @return if(unitless($value), $value * 1px, $value);
+}
+
+@function setRem($value) {
+  @return if(unitless($value), ($value / 16) * 1rem, $value);
+}

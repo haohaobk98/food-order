@@ -1,0 +1,17 @@
+@import './../../scss//mixins/index.scss';
+
+.header {
+  @extend %flex-around-horizontal;
+  @include setSpace(padding, 30);
+  // @include setPosition(sticky, 0, null, null, 0);
+  background: #e6e1dd;
+
+  .login {
+    font-family: "roboto";
+    cursor: pointer;
+  }
+
+  .basket {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,12 @@
+.child {
+  display: block;
+  :global {
+    .child__name {
+      color: green;
+
+      &._great {
+        color: red;
+      }
+    }
+  }
+}

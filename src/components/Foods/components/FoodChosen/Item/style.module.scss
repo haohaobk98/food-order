@@ -1,0 +1,90 @@
+@import './../../../scss/mixins/index.scss';
+
+.wrapper {
+  @extend %flex;
+  @include setSpace(margin-bottom, 30);
+  border-radius: 0.8rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  .image {
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      width: 17rem;
+      height: 15rem;
+      border-radius: 0.8rem 0 0 0.8rem;
+    }
+  }
+
+  .foodDetail {
+    position: relative;
+    width: 100%;
+    @include setSpace(padding, 30);
+
+    background: #fff;
+
+    .header {
+      @extend %flex-between-horizontal;
+      .title {
+        @include setFontSize(2.6);
+      }
+
+      .action {
+        @extend %flex-center;
+        @include setFontSize(1.3);
+
+        span {
+          @include setFontSize(1.5);
+          @include setSpace(padding, 0 15);
+          font-family: 'Roboto';
+        }
+
+        button {
+          @include setFontSize(2);
+          @include setSpace(padding, 0 20);
+          border-radius: 1rem;
+          box-shadow: 0 0 5px #0003;
+          border: none;
+          background: #fff;
+
+          color: #478298;
+          cursor: pointer;
+
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .toping {
+      @include setSpace(padding-top, 30);
+
+      .topingDetail {
+        @extend %flex-between-horizontal;
+        width: 16rem;
+
+        div {
+          @include setFontSize(1.5);
+          @include setSpace(padding-bottom, 10);
+
+          input {
+            @include setSpace(margin, 0 10);
+            border-radius: 0.6rem;
+            @include setSpace(padding, 0 10);
+          }
+        }
+      }
+    }
+
+    .deleteBtn {
+      @include setPosition(absolute, null, 1.5rem, 2rem, null);
+      cursor: pointer;
+
+      img {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+}

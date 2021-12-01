@@ -1,0 +1,40 @@
+%flex {
+  display: flex;
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+%flex-between-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-around-horizontal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+@mixin setFontSize($value) {
+  font-size: $value + rem;
+}
+
+@mixin setPosition($positon, $top:null, $right: null, $bottom: null, $left: null) {
+  position: $positon;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}

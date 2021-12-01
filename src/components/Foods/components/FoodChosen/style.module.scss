@@ -1,0 +1,101 @@
+@import './../../scss/mixins/index.scss';
+
+.wrapper {
+  .title {
+    @include setFontSize(4);
+    @include setSpace(margin, 40 0);
+  }
+
+  .choosen {
+    %box-styling {
+      @include setSpace(padding, 30);
+      background: #fff;
+      width: 100%;
+      border-radius: 0.6rem;
+      box-shadow: 0 0 5px #00000030;
+    }
+    .payment {
+      @extend %flex;
+      @include setSpace(margin-top, 100);
+
+      .address,
+      .card {
+        @extend %box-styling;
+
+        div {
+          @include setFontSize(2);
+
+          &:first-child {
+            @include setSpace(margin-bottom, 30);
+          }
+
+          &:last-child {
+            @include setFontSize(1);
+            font-family: 'Roboto';
+          }
+        }
+      }
+
+      .address {
+        @include setSpace(margin-right, 20);
+      }
+    }
+
+    .coupon {
+      @extend %flex;
+      @extend %box-styling;
+      @include setSpace(margin, 20 0);
+
+      div {
+        @include setSpace(margin-right, 30);
+        @include setFontSize(2);
+      }
+
+      select {
+        border-radius: 0.6rem;
+        @include setSpace(padding, 0 10);
+        width: 16rem;
+        @include setFontSize(1.5);
+
+        option {
+          @include setFontSize(1.5);
+        }
+      }
+    }
+
+    .totalPrice {
+      @extend %flex-start;
+      @extend %box-styling;
+      @include setSpace(margin-bottom, 80);
+
+      button {
+        @include setSpace(margin-right, 30);
+        @include setSpace(padding, 5 100);
+        @include setFontSize(2);
+        box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 0.6rem;
+        background: #478298;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: #095470;
+        }
+      }
+
+      div {
+        @include setFontSize(2);
+      }
+    }
+
+    .emptyCart {
+      @extend %flex-center;
+      @include setFontSize(2);
+      @extend %box-styling;
+
+      width: 100%;
+      height: 20rem;
+    }
+  }
+}

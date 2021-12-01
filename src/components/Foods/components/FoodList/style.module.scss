@@ -1,0 +1,10 @@
+@import './../../scss/mixins/index.scss';
+
+.wrapper {
+  .title {
+    @include setFontSize(4);
+    @include setSpace(margin, 40 0);
+  }
+
+
+}

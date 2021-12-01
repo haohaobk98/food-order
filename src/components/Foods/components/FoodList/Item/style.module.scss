@@ -1,0 +1,31 @@
+@import './../../../scss/mixins/index.scss';
+
+.foodImage {
+  position: relative;
+  @include setSpace(margin-bottom, 30);
+  cursor: pointer;
+
+  .btn {
+    @include setPosition(absolute, null, 1rem, 1rem, null);
+    @include setSpace(padding, 0 30);
+    @include setFontSize(3.5);
+
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px #0003;
+    cursor: pointer;
+    color: #478298;
+
+    display: none;
+
+    &:hover {
+      background: #e6e1dd;
+    }
+  }
+
+  &:hover {
+    .btn {
+      display: block;
+    }
+  }
+}

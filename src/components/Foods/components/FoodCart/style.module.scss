@@ -1,0 +1,15 @@
+@import './../../scss/mixins/index.scss';
+
+.food {
+  @extend %flex;
+  @include setSpace(padding, 30);
+  background: #f5f5f5;
+
+  .foodList {
+    @include setSpace(padding-right, 30);
+  }
+
+  .foodCart {
+    width: 100%;
+  }
+}
